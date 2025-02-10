@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Florence Hotels Map</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      background: #f4f4f4;
+      padding: 1em;
+      margin: 0;
+    }
+    #map {
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Florence Hotels Map</h1>
+  <div id="map"></div>
+  
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map centered on Florence
+    var map = L.map('map').setView([43.7696, 11.2558], 14);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // c-hotels Ambasciatori
+    // Address: Via Luigi Alamanni, 3, 50123 Firenze FI, 이탈리아
+    L.marker([43.776152, 11.246912]).addTo(map)
+      .bindPopup("<strong>c-hotels Ambasciatori</strong><br>Via Luigi Alamanni, 3, 50123 Firenze FI, 이탈리아");
+
+    // Atelier delle Grazie
+    // Address: Via del Castello D'Altafronte, 1, 50122 Firenze FI, 이탈리아
+    L.marker([43.76821005109474, 11.257038409342819]).addTo(map)
+      .bindPopup("<strong>Atelier delle Grazie</strong><br>Via del Castello D'Altafronte, 1, 50122 Firenze FI, 이탈리아");
+
+    // Hotel La Scaletta al Ponte Vecchio
+    // Address: Via de' Guicciardini, 13, 50125 Firenze FI, 이탈리아
+    L.marker([43.766960, 11.251675]).addTo(map)
+      .bindPopup("<strong>Hotel La Scaletta al Ponte Vecchio</strong><br>Via de' Guicciardini, 13, 50125 Firenze FI, 이탈리아");
+
+    // Porcellino Gallery
+    // Address: Piazza del Mercato Nuovo, 4, 50123 Firenze FI, 이탈리아
+    L.marker([43.770030748392166, 11.254130894725002]).addTo(map)
+      .bindPopup("<strong>Porcellino Gallery</strong><br>Piazza del Mercato Nuovo, 4, 50123 Firenze FI, 이탈리아");
+
+    // Hotel Indigo Florence
+    // Address: Via Jacopo da Diacceto, 16/20, 50123 Firenze FI, 이탈리아
+    L.marker([43.77815418856642, 11.244463931482889]).addTo(map)
+      .bindPopup("<strong>Hotel Indigo Florence</strong><br>Via Jacopo da Diacceto, 16/20, 50123 Firenze FI, 이탈리아");
+  </script>
+</body>
+</html>
